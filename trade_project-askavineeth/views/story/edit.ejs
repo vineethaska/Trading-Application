@@ -1,0 +1,16 @@
+<%- include('../partials/header.ejs')%>
+<div class = "login-content">
+    <form method="POST" action="/stories/<%=story.id%>?_method=PUT">
+       <label for="Category">Product Category</label>
+      <input type="text" name = "ProductCategory" id = "ProductCategory" placeholder="ProductCategory" value = "<%= story.ProductCategory%>" required> <br> <br>
+      <label for="Name">Product Name</label>
+      <input type="text" name = "ProductName" id ="ProductName" placeholder="ProductName" value = "<%= story.ProductName%>" required> <br> <br>
+      <label for="SellerDetails">Seller Details</label>
+      <input type="text" name = "SellerDetails" id = "SellerDetails" placeholder="SellerDetails" value = "<%= story.SellerDetails%>" required> <br> <br>   
+      <label for="Details" id = "Details-label">Product Details</label>
+      <textarea type="text" name = "ProductDetails" id = "ProductDetails" placeholder="ProductDetails" > <%= story.ProductDetails%></textarea><br> <br>   
+      <button type = "Submit">Submit</button>      
+    </form>
+
+    </div>
+    <%- include('../partials/footer.ejs')%>

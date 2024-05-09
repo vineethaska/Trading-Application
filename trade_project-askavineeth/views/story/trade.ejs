@@ -1,0 +1,22 @@
+<%- include ('../partials/header.ejs')%>
+    <div class = "login-content">
+        <h1><%= story.ProductName %></h1>   
+        <img src="<%= story.Image%>" width= "100px"; height= "100px " ;> <br>
+        <p> <b> Product Category:</b> <%= story.ProductCategory%></p>
+        <p> <b> Product Details:</b> <%= story.ProductDetails%></p>
+        <p> <b> Seller Details:</b> <%= story.SellerDetails%></p>
+
+        <%if(user == story.author.id){%>
+            <form>
+            <button type="submit" formmethod="GET" formaction="/stories/<%=story.id%>/edit">Edit</button>
+            <button type="submit" formmethod="POST" formaction="/stories/<%=story.id%>?_method=DELETE">Delete</button>
+            </form>
+        <% } else {%>  
+            <form>
+                <button class="button update-btn" type="submit" formmethod="POST" formaction="/agro/trades/<%= story.id %>">Trade</button>
+                <button class="button watch-btn" type="submit" formmethod="POST" formaction="/stories/<%= story.id %>/watch">Watch</button>
+            </form>
+        <%}%>
+    </div>
+    
+<%- include('../partials/footer.ejs')%>

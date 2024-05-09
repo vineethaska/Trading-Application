@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>My Application</title>
+</head>
+<body>
+    <nav>
+        <ul id="rightAlign">
+            <li><a href="/stories/new">Configure Budget➤➤</a></li>
+            <%if(!user){%>
+            <li><a href="/agro/login">Login </a></li>
+            <li><a href="/agro/signup">Sign up </a></li>
+            <%}else{%> 
+            <li><a href='/agro/profile'>Profile</a></li>
+            <li><a href='/agro/logout'>Logout</a></li>
+            <%}%>
+            </ul>
+        <!-- <h2>Jibber Jabber</h2> -->
+        <a href='/'><img id="headerUrl" src="https://www.pinclipart.com/picdir/big/20-208265_industry-agriculture-food-and-natural-resources-clipart-png.png" alt="vineeth" height="100" width="100"></img></a>
+        
+            
+     <hr> 
+     
+        <div>
+        <a href='/'>Home</a>
+        <a href='/stories'>Dashboard</a>
+    </div>
+    </nav>
+
+    <% if(errorMessages.length > 0) {%>
+        <% errorMessages.forEach(message=>{%>
+            <div class='error'>
+                <%=message%>
+            </div>
+            <%});%>
+                <%}%>
+    
+                    <% if(successMessages.length > 0) {%>
+    
+                        <% successMessages.forEach(message=>{%>
+                            <div class='success'>
+                                <%=message%>
+                            </div>
+                            <%});%>
+                                <%}%>

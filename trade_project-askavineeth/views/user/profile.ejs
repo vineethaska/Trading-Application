@@ -1,0 +1,98 @@
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <h2>Welcome, <%=user.firstName%></h2>
+    <%if(stories.length){%>
+        <p>Stories you have created:</p>
+        <table id="event_details">
+            <tr>
+                <th>Product Name</th>
+                <th>Product Category</th>
+                <th>Seller Details</th>
+                <th>Product Details</th>
+                <th>Status</th>
+                <th>Edit and Delete Button</th>
+            </tr>
+        <%stories.forEach(story=>{%>
+            <tr>
+            <td><a href="/stories/<%= story.id%>"><p><%= story.ProductName%></p></a></td>
+            <td><%= story.ProductCategory%></td>
+            <td>
+                <%= story.SellerDetails%>
+            </td>
+            <td><%= story.ProductDetails%></td>
+            <td><%= story.status%></td>
+            <td>
+                    <form style="float: left;">
+                        <button type="submit" formmethod="GET" formaction="/stories/<%=story.id%>/edit">Edit</button>
+                        <button type="submit" formmethod="POST" formaction="/stories/<%=story.id%>?_method=DELETE">Delete</button>     
+                        
+                        <% if(story.status == 'Offer Pending' && story.tradeWith) { %>
+                            <button class="button manage-btn" type="submit" formmethod="GET" formaction="/agro/trade/ownoffer/<%= story._id %>">Manage Offer</button>
+                        <% } else if (story.status == 'Offer Pending') {%>
+                            <button class="button manage-btn" type="submit" formmethod="GET" formaction="/agro/trade/offer/<%= story._id %>">Manage Offer</button>
+                        <% } %>
+                    </form> 
+            </td>
+        </tr>
+        <%});%>
+    </table>
+    <%}else{%>
+        <p>You haven't created any stories yet.</p>
+    <%};%>
+    <div class="event-heading" style="margin-top: 50px;">
+        <h3 class="dis-in-bl"><%=user.firstName%>'s watchList</h3>
+    </div> 
+    <% if(watchLists.length){ %>
+    <table>
+        <tr>
+          <th>Product Name</th>
+          <th>Product Category</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        <% watchLists.forEach(watchList => { %>
+        <tr>
+            <td><%= watchList.trade.ProductName %></td>
+            <td><%= watchList.trade.ProductCategory %></td>
+            <td><%= watchList.trade.status %></td>
+            <td>
+                <form style="float: left;">
+                    <button class="button update-btn" type="submit" formmethod="POST" formaction="/stories/watch/<%= watchList.trade._id %>?_method=DELETE"> Unwatch </button>
+                </form>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+    <% } else { %>
+        <p style="margin: 20px auto;width: 95%;">There are no watchList to display.</p>
+    <% } %>
+
+    <div class="event-heading" style="margin-top: 50px;">
+        <h3 class="dis-in-bl"><%=user.firstName%>'s offerList</h3>
+    </div> 
+    <% if(myOffers.length){ %>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        <% myOffers.forEach(offer => { %>
+        <tr>
+            <td><%= offer.ProductName %></td>
+            <td><%= offer.ProductCategory %></td>
+            <td><%= offer.status %></td>
+            <td>
+                <form style="float: left;">
+                    <button class="button update-btn" type="submit" formmethod="POST" formaction="/agro/trade/offer/cancel/<%= offer.tradeWith %>&<%= offer._id %>?_method=PUT">Cancel Offer</button>
+                </form>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+    <% } else { %>
+        <p style="margin: 20px auto;width: 95%;">There are no offers to display.</p>
+    <% } %>
+</div>
+    <%- include('../partials/footer.ejs')%>

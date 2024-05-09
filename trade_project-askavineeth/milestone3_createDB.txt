@@ -1,0 +1,27 @@
+mongosh
+
+show databases;
+use demos; //creating new db for application.
+db.createCollection('stories'); //creating collection to store items.
+
+
+//command to insert documnets(items for trading)
+db.stories.insertMany(
+[
+{ProductCategory:"Grains & Vitamins",ProductName:"Vegetable",SellerDetails:"Selling Fruit Directly to the Public.",
+ProductDetails:"ABC, EFG lane, HIJ City"},
+{ProductCategory:"Grains & Vitamins",ProductName:"Fruit",SellerDetails:"fruits and vegetables is called a green grocer.",
+ProductDetails:"ABC, EFG lane, HIJ City"},
+{ProductCategory:"Grains & Vitamins",ProductName:"Groceries",SellerDetails:"Sell to Regional Supermarket Chains.",ProductDetails:"ABC, EFG lane, HIJ City"},
+{ProductCategory:"Fruits & Vegetable",ProductName:"Apples ",SellerDetails:"Contact Local and Regional Distributors.",
+ProductDetails:"ABC, EFG lane, HIJ City"},
+{ProductCategory:"Fruits & Vegetable",ProductName:"Bananas",SellerDetails:"Sell Large Quantities Wholesale.",
+ProductDetails:"ABC, EFG lane, HIJ City"},
+{ProductCategory:"Fruits & Vegetable",ProductName:"Oranges",SellerDetails:"Contact Local and Regional Distributors.",
+ProductDetails:"ABC, EFG lane, HIJ City"}
+]
+);
+
+//  Running the statements in this file should also reset database to its initial state.
+
+db.stories.drop()

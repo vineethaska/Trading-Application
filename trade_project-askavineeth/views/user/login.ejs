@@ -1,0 +1,19 @@
+
+<%- include('../partials/header.ejs')%>
+<div class = "contactForm">
+    <form action = '/agro/login' method = 'POST'>
+        
+            
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class = "fixed-width" required>
+          
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class = "fixed-width" required>
+            
+            
+            <button>Login</button>
+               
+    </form>
+
+    </div>
+    <%- include('../partials/footer.ejs')%>

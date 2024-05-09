@@ -1,0 +1,115 @@
+[{
+  "_id": {
+    "$oid": "645c6576a05e2263e8700613"
+  },
+  "ProductName": "Wheat",
+  "ProductCategory": "Grains &amp; Vitamins",
+  "ProductDetails": "It&#x27;s really a good product",
+  "SellerDetails": "Kousic Reddy",
+  "status": "Traded",
+  "author": {
+    "$oid": "645c6518a05e2263e8700605"
+  },
+  "createdAt": {
+    "$date": "2023-05-11T03:48:06.244Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T04:59:12.990Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645c65ada05e2263e8700616"
+  },
+  "ProductName": "Apples and Oraganes",
+  "ProductCategory": "Fruits &amp; Vegetable",
+  "ProductDetails": "It&#x27;s a good produces",
+  "SellerDetails": "Akhil Mannenni",
+  "status": "Available",
+  "author": {
+    "$oid": "645c6518a05e2263e8700605"
+  },
+  "createdAt": {
+    "$date": "2023-05-11T03:49:01.696Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T03:49:01.696Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645c677fa05e2263e870061e"
+  },
+  "ProductName": "Apple Products",
+  "ProductCategory": "Tablets and Iphones",
+  "ProductDetails": "It&#x27;s a good products",
+  "SellerDetails": "Likitha Aaa",
+  "status": "Available",
+  "author": {
+    "$oid": "645c6518a05e2263e8700605"
+  },
+  "createdAt": {
+    "$date": "2023-05-11T03:56:47.239Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T03:56:47.239Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645c67fea05e2263e870062b"
+  },
+  "ProductName": "Tablet A and B",
+  "ProductCategory": "Grains amd Vitamins",
+  "ProductDetails": "It&#x27;s have a health product",
+  "SellerDetails": "Sai Krishna Reddy",
+  "status": "Traded",
+  "author": {
+    "$oid": "645c67c1a05e2263e8700623"
+  },
+  "createdAt": {
+    "$date": "2023-05-11T03:58:54.986Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T04:59:12.961Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645c681ca05e2263e870062e"
+  },
+  "ProductName": "seeds",
+  "ProductCategory": "Tablets and Iphones",
+  "ProductDetails": "it&#x27;s a good products",
+  "SellerDetails": "Aska Vineeth Kumar",
+  "status": "Available",
+  "author": {
+    "$oid": "645c67c1a05e2263e8700623"
+  },
+  "createdAt": {
+    "$date": "2023-05-11T03:59:24.179Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T03:59:24.179Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645c6862a05e2263e8700631"
+  },
+  "ProductName": "seeds and soil",
+  "ProductCategory": "Grains &amp; Vitamins",
+  "ProductDetails": "Aska, It&#x27;s good one chinna",
+  "SellerDetails": "praneeth kumar",
+  "status": "Available",
+  "author": {
+    "$oid": "645c67c1a05e2263e8700623"
+  },
+  "createdAt": {
+    "$date": "2023-05-11T04:00:34.849Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T04:00:34.849Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,25 @@
+<%- include ('../partials/header.ejs')%>
+    <div class = "content">
+        <%if(stories.length){%>
+            <h1>Dashboard</h1>
+                <%let CategorySet = new Set();%> 
+                <%for(var i = 0; i<stories.length;i++){%>
+                 <%CategorySet.add(stories[i].ProductCategory);%>
+                <%}%>
+                <%let CategoryArray = Array.from(CategorySet);%>
+               <%for(var i = 0;i<CategoryArray.length;i++){%>
+                   <h4><%= CategoryArray[i]%></h4>
+                 <%for(var j=0;j<stories.length;j++){%>
+                   <%if(stories[j].ProductCategory === CategoryArray[i]){%>
+                    <a href="/stories/<%= stories[j].id%>"><p><%= stories[j].ProductName%></p></a>
+            
+                   <%}%>
+                 <%}%>
+               <%}%>
+
+        <%}else{%>
+            <p>There are no stories to display</p>
+       <% }%>
+    </div>
+    
+<%- include('../partials/footer.ejs')%>

@@ -1,0 +1,19 @@
+
+<%- include('../partials/header.ejs')%>
+<div id = "login-content">
+  <h1 id = "h1">Sign Up and Start Exploring! </h1>
+  <form action="/agro/signup" method="POST" >
+    <label for="firstName">First Name</label><br>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+    <label for="lastName">Last Name</label><br>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="password">Password</label><br>
+    <input type="password" id="password" name="password" required minlength="8" maxlength="64"><br><br>
+    <button>Sign Up</button><br>
+<p id = "by">By signing up, you agree to our terms and conditions </p> <hr>
+<p id = "already"> Already have an account?<a href="/agro/login"> <b> Login!</b></a> </p>
+  </form>
+</div>
+<%- include('../partials/footer.ejs')%> 

@@ -1,0 +1,31 @@
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <form action = '/stories' method = 'POST'>
+        <table>
+            <tr>
+                <td><label for="ProductCategory">Total Budget</label></td>
+                <td><input type="text" id="ProductCategory" name="ProductCategory" placeholder="Total Budget" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="Name">Groceries Budget</label></td>
+                <td><input type="text" name = "ProductName" id ="ProductName" placeholder="Groceries Budget" required> <br> <br></td>
+            </tr>
+            <tr>
+                <td class = "align-top"><label for="SellerDetails">Shopping Budget</label></td>
+                <td><input type="text" name = "SellerDetails" id = "SellerDetails" placeholder="Shopping Budget" required> <br> <br></td>
+            </tr>
+            <tr>
+                <td><label for="ProductDetails" id = "Details-label">Living Expenses</label></td>
+                <td><input type="number" name = "ProductDetails" id = "ProductDetails" placeholder="Living Expenses" required></input> <br> <br>   </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="status" name="status" value="Available" hidden /></td>
+            </tr>
+            <tr>
+                <td colspan="2" class = "align-right"><button>Submit</button></td>
+            </tr>
+        </table>        
+    </form>
+
+    </div>
+    <%- include('../partials/footer.ejs')%>

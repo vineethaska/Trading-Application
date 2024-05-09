@@ -1,0 +1,36 @@
+<%- include('../partials/header.ejs') %>
+<div class="content">
+  <div class="center-container mb-100">
+    <h1>Your items available to trade:</h1>
+
+    <% if (stories.length) { %>
+      <form action="/stories/trade/<%= itemToTrade.id %>?_method=PUT" method="POST">
+        <table class="table">
+          <tr>
+            <th></th>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Status</th>
+          </tr>
+
+          <% stories.forEach(trade => { %>
+            <tr>
+              <td>
+                <label class="textfont1">
+                  <input type="radio" id="<%= trade._id %>" name="trade" value="<%= trade._id %>" />
+                </label>
+              </td>
+              <td><%= trade.ProductName %></td>
+              <td><%= trade.ProductCategory %></td>
+              <td><%= trade.status %></td>
+            </tr>
+          <% }); %>
+          <button class="button submit-btn">Trade</button>
+        </table>
+      </form>
+    <% } else { %>
+      <p>There are no items to display.</p>
+    <% } %>
+  </div>
+</div>
+<%- include('../partials/footer.ejs') %>
